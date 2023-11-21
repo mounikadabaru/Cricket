@@ -58,7 +58,7 @@ public class CricketController {
             return ResponseEntity.ok("No team is avaiable for the given id: "+id);
         }
     }
-    @GetMapping("/result/{team1}/{team2}")
+    @GetMapping("/result/{team1}&&{team2}")
     public ResponseEntity getResult(@PathVariable String team1, @PathVariable String team2 ){
 
         int team1Score = cricketService.getScore();
@@ -72,9 +72,5 @@ public class CricketController {
                 "The winner is : "+winner);
     }
 
-    @GetMapping("/greet")
-    public String Helloworld(){
-        return "Hello world";
-    }
 
 }
